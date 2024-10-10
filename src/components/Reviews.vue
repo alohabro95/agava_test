@@ -1,0 +1,349 @@
+<script setup>
+import CustomSelect from "./CustomSelect.vue";
+import ReviewItem from "./ReviewItem.vue";
+const reviews = [
+  {
+    name: "Ivan",
+    data: "03 july, 2024",
+    grade: 4,
+    text: "Aenean pharetra sodales nunc, ac tincidunt metus tempus vel. Vivamus a malesuada nisi, sed facilisis velit. Proin blandit facilisis purus, euismod feugiat odio. Phasellus interdum ultrices felis vitae finibus. Sed sodales suscipit congue. Aenean ultrices non elit et eleifend. ",
+  },
+  {
+    name: "Fedor",
+    data: "5 november, 2024",
+    grade: 5,
+    text: "Aenean pharetra sodales nunc, ac tincidunt metus tempus vel. Vivamus a malesuada nisi, sed facilisis velit. Proin blandit facilisis purus, euismod feugiat odio. Phasellus interdum ultrices felis vitae finibus. Sed sodales suscipit congue. Aenean ultrices non elit et eleifend. ",
+  },
+  {
+    name: "Igor",
+    data: "14 march, 2024",
+    grade: 3,
+    text: "Aenean pharetra sodales nunc, ac tincidunt metus tempus vel. Vivamus a malesuada nisi, sed facilisis velit. Proin blandit facilisis purus, euismod feugiat odio. Phasellus interdum ultrices felis vitae finibus. Sed sodales suscipit congue. Aenean ultrices non elit et eleifend. ",
+  },
+  {
+    name: "Pidor",
+    data: "4 september, 2024",
+    grade: 1,
+    text: "Aenean pharetra sodales nunc, ac tincidunt metus tempus vel. Vivamus a malesuada nisi, sed facilisis velit. Proin blandit facilisis purus, euismod feugiat odio. Phasellus interdum ultrices felis vitae finibus. Sed sodales suscipit congue. Aenean ultrices non elit et eleifend. ",
+  },
+];
+</script>
+<template>
+  <main>
+    <div class="reviews">
+      <div class="reviews__top">
+        <h3 class="reviews__caption">Mauris in metus luctus</h3>
+        <div class="reviews__stars">
+          <svg
+            v-for="n in 5"
+            :key="'star-' + n"
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="star"
+            :class="{ filled: n }"
+          >
+            <path
+              d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
+              stroke="#FFF853"
+              stroke-width="1.2"
+            />
+          </svg>
+        </div>
+      </div>
+      <h4 class="reviews__caption--small">*NULLA IN ULTRICIES LOREM</h4>
+      <div class="reviews__sorting">
+        <CustomSelect />
+      </div>
+      <div class="reviews__items">
+        <ReviewItem
+          v-for="(review, index) in reviews.slice(0, 3)"
+          :key="index"
+          :review="review"
+        />
+        <div class="reviews__item answer">
+          <div class="reviews__header">
+            <img
+              class="reviews__profile"
+              src="../assets/images/mobile_images/reviews/reviews__profile.png"
+              alt=""
+            />
+            <div class="reviews__info">
+              <h4 class="reviews__name">Vafledron</h4>
+              <span class="reviews__data">15 march, 2024</span>
+            </div>
+          </div>
+          <p class="reviews__text">
+            Aenean pharetra sodales nunc, ac tincidunt metus tempus vel. Vivamus
+            a malesuada nisi, sed facilisis velit. Proin blandit facilisis
+            purus, euismod feugiat odio.
+          </p>
+        </div>
+        <div class="reviews__item reviews__forms">
+          <h4 class="reviews__caption reviews__caption--h4">
+            Hinterlassen Sie eine Bewertung
+          </h4>
+          <div class="reviews__stars">
+            <svg
+              v-for="n in 5"
+              :key="'star-' + n"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="star"
+            >
+              <path
+                d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
+                stroke="#FFF853"
+                stroke-width="1.2"
+              />
+            </svg>
+          </div>
+          <textarea class="reviews__textarea" name="" id=""></textarea>
+          <input class="reviews__input" type="text" placeholder="Ihr Name*" />
+          <div class="reviews__checkbox">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Ich bin kein Roboter
+            </label>
+          </div>
+          <button class="reviews__btn">FEEDBACK SENDEN</button>
+        </div>
+        <div class="reviews__more">
+          <ReviewItem :review="reviews[3]" />
+          <div class="more-overlay">
+            <div class="overlay__other">
+              <img
+                src="../assets/images/mobile_images/reviews/reviews__arrow.png"
+                alt=""
+                width="15px"
+                height="15px"
+              />
+              <h3>MORE</h3>
+              <img
+                src="../assets/images/mobile_images/reviews/reviews__arrow.png"
+                alt=""
+                width="15px"
+                height="15px"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="reviews__item reviews__forms reviews__forms--full">
+          <h4 class="reviews__caption reviews__caption--h4">
+            Hinterlassen Sie eine Bewertung
+          </h4>
+          <div class="reviews__stars">
+            <svg
+              v-for="n in 5"
+              :key="'star-' + n"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="star"
+            >
+              <path
+                d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
+                stroke="#FFF853"
+                stroke-width="1.2"
+              />
+            </svg>
+          </div>
+          <textarea class="reviews__textarea" name="" id=""></textarea>
+          <input class="reviews__input" type="text" placeholder="Ihr Name*" />
+          <div class="reviews__checkbox">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Ich bin kein Roboter
+            </label>
+          </div>
+          <button class="reviews__btn">FEEDBACK SENDEN</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+<style lang="scss" scoped>
+.reviews {
+  &__more {
+    position: relative;
+  }
+}
+.more-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(158, 158, 158, 0.2) 0%,
+    #442a4c 67.82%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+.overlay__other {
+  display: flex;
+  position: absolute;
+  bottom: 33px;
+  left: 36%;
+  align-items: baseline;
+  gap: 7px;
+  h3 {
+    font-family: "Ubuntu", sans-serif;
+  }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__top,
+  &__middle,
+  &__nunc {
+    display: flex;
+    align-items: baseline;
+  }
+  &__top {
+    gap: 10px;
+  }
+  &__sorting {
+    gap: 8px;
+  }
+  &__caption {
+    &--regular {
+      font-weight: 500;
+    }
+  }
+  &__nunc {
+    gap: 3px;
+    border: 2px #d536ff solid;
+    padding: 8px;
+    border-radius: 10px;
+  }
+  &__arrow {
+    background-color: unset;
+    border-style: none;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .answer,
+  &__forms {
+    width: 70%;
+    margin-left: auto;
+    gap: 20px;
+    &--full {
+      width: auto;
+      margin-left: unset;
+      font-size: 20px;
+    }
+    .reviews__header {
+      justify-content: unset;
+      gap: 17px;
+    }
+    .reviews__caption {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .reviews__stars {
+      justify-content: flex-end;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .reviews__checkbox,
+    .reviews__textarea,
+    .reviews__input {
+      resize: none;
+      background: none;
+      border-style: none;
+      border: 1px #d536ff solid;
+    }
+    .reviews__textarea {
+      border-radius: 12px;
+      height: 117px;
+    }
+    .reviews__input {
+      padding: 10px 0px 10px 25px;
+      font-family: "Montserrat", sans-serif;
+      border-radius: 10px;
+    }
+  }
+  &__checkbox {
+    padding: 6px 28px;
+    border-radius: 10px;
+    .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .custom-checkbox {
+      font-family: "Ubuntu";
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      user-select: none;
+    }
+
+    .custom-checkbox .checkmark {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: none;
+      border: 1px solid #d536ff;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+
+    .custom-checkbox:hover input ~ .checkmark {
+      background-color: #470259;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark {
+      background-color: #470259;
+    }
+
+    .custom-checkbox .checkmark::after {
+      content: url(../assets/images/mobile_images/galochka.svg);
+      position: absolute;
+      display: none;
+      right: -1px;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark::after {
+      display: block;
+    }
+  }
+  &__btn {
+    display: inline;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 10px 42px;
+    background-color: #9a38b4;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+}
+</style>
