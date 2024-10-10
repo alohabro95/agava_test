@@ -21,7 +21,7 @@ const heroData1 = {
 };
 
 const heroData2 = {
-  caption: "NULLAM PULVINAR &nbsp; SUSCIPIT EST, VEL VULPUTATE",
+  caption: "NULLAM PULVINAR SUSCIPIT EST, VEL VULPUTATE",
   lemon: "SED AT EX EU VELIT FAUCIBUS",
   img1: new URL(
     "./assets/images/mobile_images/hero/hero2_img--top.png",
@@ -34,7 +34,7 @@ const heroData2 = {
 };
 
 const heroData3 = {
-  caption: "NULLAM PULVINAR &nbsp; SUSCIPIT EST, VEL VULPUTATE",
+  caption: "NULLAM PULVINAR SUSCIPIT EST, VEL VULPUTATE",
   lemon: "MAECENAS EX DIAMEGET EGET",
   img1: new URL(
     "./assets/images/mobile_images/hero/hero-money.png",
@@ -503,6 +503,9 @@ const settings2 = {
 <style lang="scss">
 .comp__hero1 {
   margin-bottom: 58px;
+  .hero__img--arrow {
+    display: none;
+  }
 }
 .comp__hero2 {
   .hero__img--top {
@@ -512,6 +515,9 @@ const settings2 = {
   .hero__img--bottom {
     right: 22px;
     bottom: -45px;
+  }
+  .hero__img--arrow {
+    display: none;
   }
 }
 .comp__hero3 {
@@ -631,6 +637,42 @@ const settings2 = {
 .section-cursus {
   .carousel {
     margin-bottom: 22px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .section-content,
+  .section-donec,
+  .section-etiam,
+  .section-aenean {
+    margin-bottom: 50px;
+  }
+  .text__caption,
+  .caption {
+    font-size: 25px;
+    line-height: normal;
+    margin-bottom: 30px;
+  }
+
+  .content {
+    &__text {
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
+  }
+  .container {
+    margin-bottom: 50px;
+  }
+  .text__list {
+    font-size: 18px;
+    margin-bottom: 50px;
+    span {
+      font-weight: 400;
+    }
+  }
+  .etiam {
+    .text__list {
+      margin-bottom: 120px;
+    }
   }
 }
 </style>

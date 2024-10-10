@@ -108,10 +108,42 @@ const props = defineProps({
     display: flex;
     align-items: baseline;
     gap: 8px;
+    span {
+      font-size: 15px;
+      color: #b6b6b6;
+    }
   }
   img {
     width: 17px;
     height: 17px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .reviews__item {
+    padding: 24px 37px 28px 38px;
+    .reviews__header {
+      justify-content: flex-start;
+    }
+    .reviews__profile {
+      margin-right: 20px;
+    }
+    .reviews__data,
+    .reviews__text {
+      font-size: 16px;
+    }
+    .reviews__stars {
+      margin-left: auto;
+      svg {
+        width: 23px;
+        height: 23px;
+      }
+    }
+    .answer {
+      padding: 100px;
+      .reviews__header {
+        gap: 0;
+      }
+    }
   }
 }
 </style>

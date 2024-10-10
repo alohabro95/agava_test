@@ -34,4 +34,23 @@
     border-style: none;
   }
 }
+@media screen and (min-width: 600px) {
+  .custom-select {
+    gap: 11px;
+    &__label {
+      font-size: 25px;
+    }
+    &__input {
+      font-size: 25px;
+      align-items: baseline;
+      padding: 3px 12px 5px 12px;
+    }
+    &__arrow {
+      font-size: 0;
+      padding: 0;
+      background-color: unset;
+      border-style: none;
+    }
+  }
+}
 </style>

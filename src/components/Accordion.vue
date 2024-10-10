@@ -69,7 +69,7 @@ function handleAccordion(selectedIndex) {
 .CollapseContent {
   padding: 18px 15px;
   font-family: "Ubuntu", sans-serif;
-  font-size: 15px;
+  font-size: 28px;
 }
 .Panel {
   display: flex;
@@ -93,5 +93,14 @@ function handleAccordion(selectedIndex) {
 
 .CollapseContent {
   margin-top: 5px;
+}
+@media screen and (min-width: 600px) {
+  .Panel {
+    font-size: 30px;
+  }
+  .arrow {
+    width: 30px;
+    height: 16px;
+  }
 }
 </style>
