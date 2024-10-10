@@ -81,38 +81,42 @@ const reviews = [
             purus, euismod feugiat odio.
           </p>
         </div>
-        <div class="reviews__item reviews__forms">
-          <h4 class="reviews__caption reviews__caption--h4">
-            Hinterlassen Sie eine Bewertung
-          </h4>
-          <div class="reviews__stars">
-            <svg
-              v-for="n in 5"
-              :key="'star-' + n"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="star"
-            >
-              <path
-                d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
-                stroke="#FFF853"
-                stroke-width="1.2"
-              />
-            </svg>
+        <div class="reviews__item forms">
+          <div class="forms__header">
+            <h4 class="forms__caption reviews__caption--h4">
+              Hinterlassen Sie eine Bewertung
+            </h4>
+            <div class="reviews__stars forms__stars">
+              <svg
+                v-for="n in 5"
+                :key="'star-' + n"
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="star"
+              >
+                <path
+                  d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
+                  stroke="#FFF853"
+                  stroke-width="1.2"
+                />
+              </svg>
+            </div>
           </div>
-          <textarea class="reviews__textarea" name="" id=""></textarea>
-          <input class="reviews__input" type="text" placeholder="Ihr Name*" />
-          <div class="reviews__checkbox">
-            <label class="custom-checkbox">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-              Ich bin kein Roboter
-            </label>
+          <textarea class="forms__textarea" name="" id=""></textarea>
+          <div class="forms__group">
+            <input class="forms__input" type="text" placeholder="Ihr Name*" />
+            <div class="forms__checkbox">
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Ich bin kein Roboter
+              </label>
+            </div>
+            <button class="forms__btn">FEEDBACK SENDEN</button>
           </div>
-          <button class="reviews__btn">FEEDBACK SENDEN</button>
         </div>
         <div class="reviews__more">
           <ReviewItem :review="reviews[3]" />
@@ -134,38 +138,42 @@ const reviews = [
             </div>
           </div>
         </div>
-        <div class="reviews__item reviews__forms reviews__forms--full">
-          <h4 class="reviews__caption reviews__caption--h4">
-            Hinterlassen Sie eine Bewertung
-          </h4>
-          <div class="reviews__stars">
-            <svg
-              v-for="n in 5"
-              :key="'star-' + n"
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="star"
-            >
-              <path
-                d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
-                stroke="#FFF853"
-                stroke-width="1.2"
-              />
-            </svg>
+        <div class="reviews__item forms forms--full">
+          <div class="forms__header">
+            <h4 class="forms__caption reviews__caption--h4">
+              Hinterlassen Sie eine Bewertung
+            </h4>
+            <div class="reviews__stars forms__stars">
+              <svg
+                v-for="n in 5"
+                :key="'star-' + n"
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="star"
+              >
+                <path
+                  d="M9.78748 9.44631L11.0105 13.379L7.86471 10.9741L7.50031 10.6956L7.13591 10.9741L3.99008 13.379L5.21314 9.44631L5.338 9.04484L5.00326 8.79043L1.78107 6.34157H5.72891H6.17171L6.30225 5.91846L7.50031 2.03521L8.69838 5.91846L8.82892 6.34157H9.27171H13.2191L9.99733 8.79046L9.66263 9.04486L9.78748 9.44631Z"
+                  stroke="#FFF853"
+                  stroke-width="1.2"
+                />
+              </svg>
+            </div>
           </div>
-          <textarea class="reviews__textarea" name="" id=""></textarea>
-          <input class="reviews__input" type="text" placeholder="Ihr Name*" />
-          <div class="reviews__checkbox">
-            <label class="custom-checkbox">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-              Ich bin kein Roboter
-            </label>
+          <textarea class="forms__textarea" name="" id=""></textarea>
+          <div class="forms__group">
+            <input class="forms__input" type="text" placeholder="Ihr Name*" />
+            <div class="forms__checkbox">
+              <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Ich bin kein Roboter
+              </label>
+            </div>
+            <button class="forms__btn">FEEDBACK SENDEN</button>
           </div>
-          <button class="reviews__btn">FEEDBACK SENDEN</button>
         </div>
       </div>
     </div>
@@ -216,12 +224,13 @@ const reviews = [
   &__top {
     gap: 10px;
   }
-  &__sorting {
-    gap: 8px;
-  }
+
   &__caption {
     &--regular {
       font-weight: 500;
+    }
+    &--small {
+      font-size: 14px;
     }
   }
   &__nunc {
@@ -240,7 +249,7 @@ const reviews = [
     gap: 15px;
   }
   .answer,
-  &__forms {
+  .forms {
     width: 70%;
     margin-left: auto;
     gap: 20px;
@@ -249,11 +258,12 @@ const reviews = [
       margin-left: unset;
       font-size: 20px;
     }
-    .reviews__header {
-      justify-content: unset;
-      gap: 17px;
+    &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-    .reviews__caption {
+    &__caption {
       font-family: "Ubuntu", sans-serif;
       font-weight: 500;
       white-space: nowrap;
@@ -265,26 +275,30 @@ const reviews = [
         height: 20px;
       }
     }
-
-    .reviews__checkbox,
-    .reviews__textarea,
-    .reviews__input {
+    .forms__group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__checkbox,
+    &__textarea,
+    &__input {
       resize: none;
       background: none;
       border-style: none;
       border: 1px #d536ff solid;
     }
-    .reviews__textarea {
+    &__textarea {
       border-radius: 12px;
       height: 117px;
     }
-    .reviews__input {
+    &__input {
       padding: 10px 0px 10px 25px;
       font-family: "Montserrat", sans-serif;
       border-radius: 10px;
     }
   }
-  &__checkbox {
+  .forms__checkbox {
     padding: 6px 28px;
     border-radius: 10px;
     .custom-checkbox input {
@@ -333,7 +347,7 @@ const reviews = [
       display: block;
     }
   }
-  &__btn {
+  .forms__btn {
     display: inline;
     font-family: "Ubuntu", sans-serif;
     font-size: 17px;
@@ -344,6 +358,88 @@ const reviews = [
     border-width: 1px;
     border-radius: 10px;
     white-space: nowrap;
+  }
+  @media screen and (min-width: 600px) {
+    .reviews {
+      &__top {
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 13px;
+      }
+      &__caption {
+        font-size: 25px;
+        &--small {
+          font-size: 18px;
+          margin-bottom: 30px;
+        }
+      }
+      &__stars {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      &__sorting {
+        margin-bottom: 48px;
+      }
+      &__items {
+        gap: 30px;
+      }
+    }
+    .answer {
+      .reviews__header {
+        gap: 0;
+      }
+    }
+    .forms {
+      width: 70%;
+      margin-left: auto;
+      gap: 30px;
+      flex-direction: unset;
+      flex-wrap: wrap;
+      &--full {
+        width: auto;
+        margin-left: unset;
+        font-size: 20px;
+      }
+      &__header {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      &__caption {
+        font-size: 18px;
+      }
+      .reviews__stars {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .forms__group {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      &__textarea {
+        flex: 1;
+        height: auto;
+        order: 3;
+      }
+    }
+    .overlay__other {
+      bottom: 33px;
+      left: 42%;
+      gap: 4px;
+      h3 {
+        font-size: 25px;
+      }
+      img {
+        width: 19px;
+        height: 19px;
+      }
+    }
   }
 }
 </style>
