@@ -51,10 +51,19 @@ const heroData3 = {
 };
 
 const settings = {
-  groupsToShow: 1,
-  groupsToScroll: 1,
+  groupsToShow: 2,
+  groupsToScroll: 2,
   arrows: true,
   infinite: true,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        groupsToShow: 1,
+        groupsToScroll: 1,
+      },
+    },
+  ],
 };
 
 const settings2 = {
@@ -63,6 +72,8 @@ const settings2 = {
   arrows: true,
   infinite: true,
 };
+
+const settings3 = settings2;
 </script>
 
 <template>
@@ -148,7 +159,7 @@ const settings2 = {
           felis sed tellus.
         </li>
       </ul>
-      <div class="carousel">
+      <div class="carousel carouselAenean">
         <VSlickCarousel v-bind="settings">
           <div class="slide">
             <img
@@ -159,6 +170,18 @@ const settings2 = {
           <div class="slide">
             <img
               src="./assets/images/mobile_images/aenean-slider-img3.png"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="./assets/images/mobile_images/aenean-slider-img1.png"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="./assets/images/mobile_images/aenean-slider-img1.png"
               alt=""
             />
           </div>
@@ -296,6 +319,9 @@ const settings2 = {
         </li>
       </ul>
     </div>
+    <div class="donec__slider">
+      <Slider />
+    </div>
     <div class="donec__gallery">
       <img src="../src/assets/images/mobile_images/slider/1.png" alt="" />
       <img src="../src/assets/images/mobile_images/slider/2.png" alt="" />
@@ -327,62 +353,134 @@ const settings2 = {
           pretium lorem scelerisque auctor.
         </li>
       </ul>
-      <VSlickCarousel v-bind="settings2">
-        <div class="tema tema2">
-          <div class="slider-item slider-item2">
-            <div>
-              <img
-                src="./assets/images/mobile_images/slider/border-image1.png"
-                alt="slider image 1"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/images/mobile_images/slider/border-image2.png"
-                alt="slider image 2"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="tema tema2">
-          <div class="slider-item slider-item2">
-            <div>
-              <img
-                src="./assets/images/mobile_images/slider/border-image1.png"
-                alt="slider image 1"
-              />
-            </div>
-            <div>
-              <img
-                src="./assets/images/mobile_images/slider/border-image2.png"
-                alt="slider image 2"
-              />
+      <div class="vestibulum__slider">
+        <VSlickCarousel v-bind="settings2">
+          <div class="tema tema2">
+            <div class="slider-item slider-item2">
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image1.png"
+                  alt="slider image 1"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image2.png"
+                  alt="slider image 2"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <template #prevArrow="arrowSlotProps">
-          <button
-            class="slider-arrow slider-arrow--left"
-            @click="arrowSlotProps.onClick"
-          >
-            <img
-              src="./assets/images/mobile_images/slider/slider-arrow-left.png"
-              alt="Previous"
-            />
-          </button>
-        </template>
-        <template #nextArrow="arrowSlotProps">
-          <button
-            class="slider-arrow slider-arrow--right"
-            @click="arrowSlotProps.onClick"
-          >
-            <img
-              src="./assets/images/mobile_images/slider/slider-arrow-right.png"
-              alt="Previous"
-            />
-          </button>
-        </template>
-      </VSlickCarousel>
+          <div class="tema tema2">
+            <div class="slider-item slider-item2">
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image1.png"
+                  alt="slider image 1"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image2.png"
+                  alt="slider image 2"
+                />
+              </div>
+            </div>
+          </div>
+          <template #prevArrow="arrowSlotProps">
+            <button
+              class="slider-arrow slider-arrow--left"
+              @click="arrowSlotProps.onClick"
+            >
+              <img
+                src="./assets/images/mobile_images/slider/slider-arrow-left.png"
+                alt="Previous"
+              />
+            </button>
+          </template>
+          <template #nextArrow="arrowSlotProps">
+            <button
+              class="slider-arrow slider-arrow--right"
+              @click="arrowSlotProps.onClick"
+            >
+              <img
+                src="./assets/images/mobile_images/slider/slider-arrow-right.png"
+                alt="Previous"
+              />
+            </button>
+          </template>
+        </VSlickCarousel>
+      </div>
+      <div class="vestibulum__slider2">
+        <VSlickCarousel v-bind="settings2">
+          <div class="tema tema2">
+            <div class="slider-item slider-item2">
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image1.png"
+                  alt="slider image 1"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image2.png"
+                  alt="slider image 2"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image1.png"
+                  alt="slider image 1"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="tema tema2">
+            <div class="slider-item slider-item2">
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image1.png"
+                  alt="slider image 1"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image2.png"
+                  alt="slider image 2"
+                />
+              </div>
+              <div>
+                <img
+                  src="./assets/images/mobile_images/slider/border-image1.png"
+                  alt="slider image 1"
+                />
+              </div>
+            </div>
+          </div>
+          <template #prevArrow="arrowSlotProps">
+            <button
+              class="slider-arrow slider-arrow--left"
+              @click="arrowSlotProps.onClick"
+            >
+              <img
+                src="./assets/images/mobile_images/slider/slider-arrow-left.png"
+                alt="Previous"
+              />
+            </button>
+          </template>
+          <template #nextArrow="arrowSlotProps">
+            <button
+              class="slider-arrow slider-arrow--right"
+              @click="arrowSlotProps.onClick"
+            >
+              <img
+                src="./assets/images/mobile_images/slider/slider-arrow-right.png"
+                alt="Previous"
+              />
+            </button>
+          </template>
+        </VSlickCarousel>
+      </div>
     </div>
   </section>
   <section class="section-etiam">
@@ -447,6 +545,12 @@ const settings2 = {
       </ul>
       <div class="carousel">
         <VSlickCarousel v-bind="settings">
+          <div class="slide">
+            <img src="./assets/images/mobile_images/cursus-slider.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./assets/images/mobile_images/cursus-slider.png" alt="" />
+          </div>
           <div class="slide">
             <img src="./assets/images/mobile_images/cursus-slider.png" alt="" />
           </div>
@@ -574,6 +678,12 @@ const settings2 = {
     }
   }
 }
+.donec__slider {
+  display: none;
+}
+.vestibulum__slider2 {
+  display: none;
+}
 .carousel {
   .slide {
     margin-bottom: 60px;
@@ -673,6 +783,37 @@ const settings2 = {
     .text__list {
       margin-bottom: 120px;
     }
+  }
+  .carouselAenean {
+    .v-slick-track {
+      margin-bottom: 50px;
+      img {
+        width: 97%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 767px) {
+  .donec__slider {
+    .slider-item {
+      img {
+        min-height: 210px;
+        min-width: 164px;
+      }
+    }
+    display: block;
+  }
+  .donec__gallery {
+    display: none;
+  }
+  .vestibulum__slider {
+    display: none;
+  }
+  .vestibulum__slider2 {
+    .slider-item {
+      margin-bottom: 50px;
+    }
+    display: block;
   }
 }
 </style>
