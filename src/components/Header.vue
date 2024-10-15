@@ -354,4 +354,9 @@ body {
     }
   }
 }
+@media screen and (min-width: 1280px) {
+  .section-header {
+    margin-bottom: 130px;
+  }
+}
 </style>
