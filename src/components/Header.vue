@@ -183,7 +183,7 @@ const hideTooltip = () => {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 body {
-  background-image: url(../assets/images/mobile_images/background1.png);
+  // background-image: url(../assets/images/mobile_images/background1.png);
   background-color: #432488;
   background-repeat: repeat;
 }

@@ -19,9 +19,10 @@ const heroData1 = {
     import.meta.url
   ).href,
 };
-
+const bes = "\n";
+const caption = `NULLAM PULVINAR${bes}SUSCIPIT EST, VEL VULPUTATE`;
 const heroData2 = {
-  caption: "NULLAM PULVINAR SUSCIPIT EST, VEL VULPUTATE",
+  caption: caption,
   lemon: "SED AT EX EU VELIT FAUCIBUS",
   img1: new URL(
     "./assets/images/mobile_images/hero/hero2_img--top.png",
@@ -72,8 +73,6 @@ const settings2 = {
   arrows: true,
   infinite: true,
 };
-
-const settings3 = settings2;
 </script>
 
 <template>
@@ -811,7 +810,11 @@ const settings3 = settings2;
   }
   .vestibulum__slider2 {
     .slider-item {
-      margin-bottom: 50px;
+      img {
+        width: 200px;
+        height: 310px;
+      }
+      margin-bottom: 100px;
     }
     display: block;
   }

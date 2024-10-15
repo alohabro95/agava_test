@@ -61,6 +61,7 @@ const props = defineProps({
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      white-space: pre-wrap;
     }
 
     &--lemon {
@@ -136,6 +137,8 @@ const props = defineProps({
     }
     &__caption {
       font-size: 32px;
+      white-space: unset;
+
       &--lemon {
         max-width: unset;
       }

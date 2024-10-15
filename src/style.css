@@ -12,6 +12,13 @@ h3 {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 body {
+  background-image: url(./assets/images/mobile_images/background1.png);
+  @media screen and (min-width: 768px) {
+    background-image: url(./assets/images/desktop_images/background2.png);
+  }
+  @media screen and (min-width: 900px) {
+    background-image: url(./assets/images/desktop_images/backgroundFull.png);
+  }
   overflow-x: hidden;
 }
 @media screen and (min-width: 600px) {
