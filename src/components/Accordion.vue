@@ -103,4 +103,9 @@ function handleAccordion(selectedIndex) {
     height: 16px;
   }
 }
+@media screen and (min-width: 1440px) {
+  .Wrapper {
+    display: none;
+  }
+}
 </style>

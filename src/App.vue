@@ -114,6 +114,15 @@ const settings2 = {
         ></iframe>
       </div> -->
     </div>
+    <div class="gallery">
+      <img src="./assets/images/desktop_images/gallery/1.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/2.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/3.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/4.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/5.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/6.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/7.png" alt="" />
+    </div>
   </section>
   <div class="container">
     <Slider />
@@ -207,6 +216,20 @@ const settings2 = {
             </button>
           </template>
         </VSlickCarousel>
+      </div>
+      <div class="galleryAenean gallery">
+        <img
+          src="./assets/images/desktop_images/gallery/aenean-gallery.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/aenean-gallery2.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/aenean-gallery3.png"
+          alt=""
+        />
       </div>
     </div>
   </section>
@@ -329,6 +352,15 @@ const settings2 = {
       <img src="../src/assets/images/mobile_images/slider/5.png" alt="" />
       <img src="../src/assets/images/mobile_images/slider/6.png" alt="" />
       <img src="../src/assets/images/mobile_images/slider/7.png" alt="" />
+    </div>
+    <div class="gallery">
+      <img src="./assets/images/desktop_images/gallery/1.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/2.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/3.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/4.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/5.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/6.png" alt="" />
+      <img src="./assets/images/desktop_images/gallery/7.png" alt="" />
     </div>
   </section>
   <section class="section-vestibulum">
@@ -480,6 +512,24 @@ const settings2 = {
           </template>
         </VSlickCarousel>
       </div>
+      <div class="vestibulum__gallery gallery">
+        <img
+          src="./assets/images/desktop_images/gallery/vestibulum-gallery.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/vestibulum-gallery2.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/vestibulum-gallery3.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/vestibulum-gallery4.png"
+          alt=""
+        />
+      </div>
     </div>
   </section>
   <section class="section-etiam">
@@ -580,8 +630,22 @@ const settings2 = {
           </template>
         </VSlickCarousel>
       </div>
+      <div class="galleryCursus gallery">
+        <img
+          src="./assets/images/desktop_images/gallery/cursus-gallery.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/cursus-gallery2.png"
+          alt=""
+        />
+        <img
+          src="./assets/images/desktop_images/gallery/cursus-gallery3.png"
+          alt=""
+        />
+      </div>
       <h3 class="text__caption">Vestibulum auctor libero massa</h3>
-      <ul class="text__list">
+      <ul class="text__list text__list--bottom">
         <p>
           Aenean quis nibh massa. In hac habitasse platea dictumst. Aenean
           commodo metus quis malesuada sollicitudin. Vestibulum molestie velit
@@ -646,7 +710,9 @@ const settings2 = {
     display: none;
   }
 }
-
+.gallery {
+  display: none;
+}
 .section-content,
 .section-donec,
 .section-etiam {
@@ -819,4 +885,89 @@ const settings2 = {
     display: block;
   }
 }
+@media screen and (min-width: 1024px) {
+  .carousel2 {
+    display: none;
+  }
+  .gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    img {
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-width: 100px;
+      max-width: 288px;
+      height: auto;
+    }
+  }
+  .carouselAenean {
+    display: none;
+  }
+  .galleryAenean {
+    img {
+      min-width: 300px;
+      max-width: 533px;
+    }
+  }
+  .vestibulum__slider2 {
+    display: none;
+  }
+  .section-cursus {
+    .carousel {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .caption,
+  .text__caption {
+    font-size: 48px;
+    margin-bottom: unset;
+  }
+  .content__text,
+  .text__list {
+    font-size: 24px;
+    line-height: normal;
+    margin-bottom: 30px;
+  }
+  .section-content {
+    .comp__hero1 {
+      margin-bottom: 5px;
+    }
+  }
+
+  .section-aenean {
+    .text__list {
+      span {
+        font-size: 36px;
+      }
+    }
+  }
+  .section-etiam {
+    .text__list {
+      margin-bottom: 90px;
+    }
+    .etiam__caption {
+      max-width: unset;
+    }
+  }
+  .section-cursus {
+    .text__list {
+      margin-bottom: 50px;
+      &--bottom {
+        margin-bottom: 150px;
+      }
+    }
+    .galleryCursus {
+      margin-bottom: 50px;
+      img {
+        min-width: 410px;
+      }
+    }
+  }
+}
 </style>
+
+<!-- background: linear-gradient(180deg, rgba(154, 56, 180, 0.2) 0%, rgba(109, 17,
+133, 0) 100%); -->

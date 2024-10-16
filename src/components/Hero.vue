@@ -287,9 +287,10 @@ const props = defineProps({
   .section-mauris {
     .comp__hero2 {
       .hero__img--top {
-        width: 52%;
+        z-index: 0;
+        width: 47%;
         height: 100%;
-        top: -5px;
+        top: 5px;
         content: url(/src/assets/images/desktop_images/hero/hero2-desktopFull.png);
       }
       .hero__img--bottom {
@@ -325,8 +326,8 @@ const props = defineProps({
       }
       .hero__img--top {
         content: url(../assets/images/desktop_images/hero/hero3-desktopFull.png);
-        width: 80%;
-        top: -20px;
+        width: 70%;
+        top: 10px;
         right: -25px;
       }
       .hero__img--arrow {
