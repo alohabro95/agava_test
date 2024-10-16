@@ -1,11 +1,13 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const isOpen = ref(false);
 const currentTooltip = ref(null);
 
 const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
+  if (window.innerWidth < 1440) {
+    isOpen.value = !isOpen.value;
+  }
 };
 
 const showTooltip = (tooltipText) => {
@@ -15,6 +17,23 @@ const showTooltip = (tooltipText) => {
 const hideTooltip = () => {
   currentTooltip.value = null;
 };
+
+const updateMenuDisplay = () => {
+  if (window.innerWidth >= 1440) {
+    isOpen.value = true;
+  } else {
+    isOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("resize", updateMenuDisplay);
+  updateMenuDisplay();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateMenuDisplay);
+});
 </script>
 
 <template>
@@ -357,6 +376,32 @@ body {
 @media screen and (min-width: 1280px) {
   .section-header {
     margin-bottom: 130px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section-header {
+    .header {
+      .burger-button {
+        order: 2;
+        display: none;
+      }
+      .burger__menu {
+        order: 3;
+        .burger__list {
+          top: 130%;
+          left: 26px;
+          .menu {
+            li {
+              width: 45px;
+              height: 45px;
+            }
+          }
+        }
+      }
+      .logo-group {
+        order: 1;
+      }
+    }
   }
 }
 </style>
