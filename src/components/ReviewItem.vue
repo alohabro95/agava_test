@@ -146,4 +146,73 @@ const props = defineProps({
     }
   }
 }
+@media screen and (min-width: 1440px) {
+  .reviews {
+    gap: unset;
+    .reviews__top {
+      .reviews__caption {
+        font-size: 48px;
+      }
+      .reviews__stars {
+        svg {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+    .reviews__sorting {
+      .custom-select {
+        .custom-select__label,
+        .custom-select__input {
+          font-size: 35px;
+        }
+      }
+      .custom-select__arrow {
+        img {
+          width: 21px;
+          height: 21px;
+        }
+      }
+    }
+    .reviews__items {
+      gap: 18px;
+      .reviews__item {
+        padding: 26px 62px 18px 41px;
+        .reviews__header {
+          .reviews__profile {
+            width: 53px;
+            height: 53px;
+          }
+          .reviews__info {
+            .reviews__name {
+              font-size: 24px;
+            }
+            .reviews__data {
+              font-size: 18px;
+            }
+          }
+          .reviews__stars {
+            svg {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+        .reviews__text {
+          font-size: 24px;
+        }
+        .reviews__footer {
+          gap: 34px;
+          img {
+            width: 25px;
+            height: 25px;
+          }
+          span {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

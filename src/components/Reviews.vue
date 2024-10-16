@@ -84,7 +84,7 @@ const reviews = [
         <div class="reviews__item forms">
           <div class="forms__header">
             <h4 class="forms__caption reviews__caption--h4">
-              Hinterlassen Sie eine Bewertung
+              HINTERLASSEN SIE EINE BEWERTUNG
             </h4>
             <div class="reviews__stars forms__stars">
               <svg
@@ -107,12 +107,12 @@ const reviews = [
           </div>
           <textarea class="forms__textarea" name="" id=""></textarea>
           <div class="forms__group">
-            <input class="forms__input" type="text" placeholder="Ihr Name*" />
+            <input class="forms__input" type="text" placeholder="IHR NAME*" />
             <div class="forms__checkbox">
               <label class="custom-checkbox">
                 <input type="checkbox" />
                 <span class="checkmark"></span>
-                Ich bin kein Roboter
+                ICH BIN KEIN ROBOTER
               </label>
             </div>
             <button class="forms__btn">FEEDBACK SENDEN</button>
@@ -179,7 +179,7 @@ const reviews = [
     </div>
   </main>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 .reviews {
   &__more {
     position: relative;
@@ -359,85 +359,142 @@ const reviews = [
     border-radius: 10px;
     white-space: nowrap;
   }
-  @media screen and (min-width: 600px) {
-    .reviews {
-      &__top {
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 13px;
-      }
-      &__caption {
-        font-size: 25px;
-        &--small {
-          font-size: 18px;
-          margin-bottom: 30px;
-        }
-      }
-      &__stars {
-        svg {
-          width: 30px;
-          height: 30px;
-        }
-      }
-      &__sorting {
-        margin-bottom: 48px;
-      }
-      &__items {
-        gap: 30px;
-      }
+}
+@media screen and (min-width: 600px) {
+  .reviews {
+    &__top {
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 13px;
     }
-    .answer {
-      .reviews__header {
-        gap: 0;
-      }
-    }
-    .forms {
-      width: 70%;
-      margin-left: auto;
-      gap: 30px;
-      flex-direction: unset;
-      flex-wrap: wrap;
-      &--full {
-        width: auto;
-        margin-left: unset;
-        font-size: 20px;
-      }
-      &__header {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      &__caption {
+    &__caption {
+      font-size: 25px;
+      &--small {
         font-size: 18px;
-      }
-      .reviews__stars {
-        svg {
-          width: 20px;
-          height: 20px;
-        }
-      }
-      .forms__group {
-        order: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      &__textarea {
-        flex: 1;
-        height: auto;
-        order: 3;
+        margin-bottom: 30px;
       }
     }
-    .overlay__other {
-      bottom: 33px;
-      left: 42%;
-      gap: 4px;
-      h3 {
-        font-size: 25px;
+    &__stars {
+      svg {
+        width: 30px;
+        height: 30px;
       }
-      img {
-        width: 19px;
-        height: 19px;
+    }
+    &__sorting {
+      margin-bottom: 48px;
+    }
+    &__items {
+      gap: 30px;
+    }
+  }
+  .answer {
+    .reviews__header {
+      gap: 0;
+    }
+  }
+  .forms {
+    width: 70%;
+    margin-left: auto;
+    gap: 30px;
+    flex-direction: unset;
+    flex-wrap: wrap;
+    &--full {
+      width: auto;
+      margin-left: unset;
+      font-size: 20px;
+    }
+    .forms__header {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__caption {
+      font-size: 18px;
+    }
+    .reviews__stars {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .forms__group {
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__textarea {
+      flex: 1;
+      height: auto;
+      order: 3;
+    }
+  }
+  .overlay__other {
+    bottom: 33px;
+    left: 42%;
+    gap: 4px;
+    h3 {
+      font-size: 25px;
+    }
+    img {
+      width: 19px;
+      height: 19px;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .reviews {
+    .reviews__items {
+      .forms {
+        padding: 40px 60px 60px 40px;
+        .forms__header {
+          align-items: end;
+          flex-direction: row;
+          .forms__caption {
+            font-size: 25px;
+          }
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        .forms__input,
+        .forms__checkbox,
+        .forms__btn,
+        .forms__textarea {
+          border-radius: 15px;
+          font-size: 27px;
+        }
+        .forms__group {
+          gap: 23px;
+          .forms__input {
+            padding: 16px 0px 16px 40px;
+            font-weight: 500;
+          }
+          .forms__checkbox {
+            align-items: center;
+            .custom-checkbox {
+              padding: 28px 0px 28px 64px;
+              font-size: 27px;
+              .checkmark {
+                top: 21px;
+                left: 4px;
+                width: 38px;
+                height: 38px;
+              }
+              .checkmark::after {
+                right: 6px;
+                top: -4px;
+              }
+            }
+          }
+          .forms__btn {
+            padding: 20px 72px;
+          }
+        }
+        .forms__textarea {
+          height: unset;
+        }
       }
     }
   }
