@@ -4,6 +4,7 @@ import Hero from "./components/Hero.vue";
 import Slider from "./components/Slider.vue";
 import Reviews from "./components/Reviews.vue";
 import Accordion from "./components/Accordion.vue";
+import Footer from "./components/Footer.vue";
 import "v-slick-carousel/style.css";
 import { VSlickCarousel } from "v-slick-carousel";
 
@@ -665,6 +666,9 @@ const settings2 = {
     </div>
   </section>
   <Accordion />
+  <section class="section-footer">
+    <Footer />
+  </section>
 </template>
 
 <style lang="scss">
@@ -813,6 +817,9 @@ const settings2 = {
   .carousel {
     margin-bottom: 22px;
   }
+}
+.section-footer {
+  display: none;
 }
 @media screen and (min-width: 600px) {
   .section-content,
@@ -966,8 +973,26 @@ const settings2 = {
       }
     }
   }
+  .section-footer {
+    position: relative;
+    z-index: 1;
+    background: #361039;
+    display: block;
+    padding: 0;
+  }
+  .section-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(154, 56, 180, 0.2) 0%,
+      rgba(109, 17, 133, 0) 100%
+    );
+    z-index: -1;
+  }
 }
 </style>
-
-<!-- background: linear-gradient(180deg, rgba(154, 56, 180, 0.2) 0%, rgba(109, 17,
-133, 0) 100%); -->
