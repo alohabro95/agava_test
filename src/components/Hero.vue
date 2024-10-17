@@ -156,20 +156,6 @@ const props = defineProps({
       padding: 8px 34px;
       border-radius: 13px;
     }
-    // &__img {
-    //   &--top {
-    //     top: -38px;
-    //     right: 0px;
-    //     z-index: 1;
-    //     position: absolute;
-    //   }
-    //   &--bottom {
-    //     bottom: -54px;
-    //     right: 0px;
-    //     z-index: 1;
-    //     position: absolute;
-    //   }
-    // }
   }
   .comp__hero1 {
     .hero__img--top {
@@ -343,6 +329,42 @@ const props = defineProps({
         right: 58px;
         width: 251px;
         height: 205px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1800px) {
+  .comp__hero1 {
+    .hero__img--top {
+      width: unset;
+      height: unset;
+      right: 466px;
+      top: -76px;
+    }
+    .hero__img--bottom {
+      right: 92px;
+      width: unset;
+      height: unset;
+    }
+  }
+  .section-mauris {
+    .comp__hero2 {
+      .hero__img--top {
+        width: 60%;
+      }
+    }
+  }
+  .section-etiam {
+    .comp__hero3 {
+      .hero-container {
+        .lemon-container {
+          width: 375px;
+        }
+      }
+      .hero__img--top {
+        width: 80%;
+        top: -90px;
+        right: -25px;
       }
     }
   }
