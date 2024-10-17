@@ -1,21 +1,104 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import Menu from "./Menu.vue";
+
+const mainMenu = {
+  number1: [
+    {
+      key: "Pidorsk",
+      tooltipText: "Pidorsk Tooltip",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/check.png",
+        import.meta.url
+      ).href,
+    },
+    {
+      key: "Home",
+      tooltipText: "Home",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/home.png",
+        import.meta.url
+      ).href,
+    },
+  ],
+  number2: [
+    {
+      key: "Stock",
+      tooltipText: "Stock",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/stock.png",
+        import.meta.url
+      ).href,
+    },
+    {
+      key: "User",
+      tooltipText: "User",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/user.png",
+        import.meta.url
+      ).href,
+    },
+    {
+      key: "Stock",
+      tooltipText: "Dollar",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/dollar.png",
+        import.meta.url
+      ).href,
+    },
+  ],
+  number3: [
+    {
+      key: "Eye",
+      tooltipText: "Eye",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/eye.png",
+        import.meta.url
+      ).href,
+    },
+    {
+      key: "Call",
+      tooltipText: "Call",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/call.png",
+        import.meta.url
+      ).href,
+    },
+    {
+      key: "Phone",
+      tooltipText: "Phone",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/phone.png",
+        import.meta.url
+      ).href,
+    },
+  ],
+  number4: [
+    {
+      key: "Questions",
+      tooltipText: "Questions",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/questions.png",
+        import.meta.url
+      ).href,
+    },
+    {
+      key: "Cloud",
+      tooltipText: "Cloud",
+      img: new URL(
+        "../assets/images/mobile_images/burger-list/cloud.png",
+        import.meta.url
+      ).href,
+    },
+  ],
+};
 
 const isOpen = ref(false);
-const currentTooltip = ref(null);
 
 const toggleMenu = () => {
   if (window.innerWidth < 1440) {
     isOpen.value = !isOpen.value;
   }
-};
-
-const showTooltip = (tooltipText) => {
-  currentTooltip.value = tooltipText;
-};
-
-const hideTooltip = () => {
-  currentTooltip.value = null;
 };
 
 const updateMenuDisplay = () => {
@@ -51,123 +134,16 @@ onBeforeUnmount(() => {
       <nav v-if="isOpen" class="burger__menu">
         <ul class="burger__list">
           <li class="list-el">
-            <ul class="menu">
-              <li @mouseover="showTooltip('Pidorsk')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/check.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Pidorsk'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Pidorsk</div>
-                </div>
-              </li>
-              <li @mouseover="showTooltip('Home')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/home.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Home'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Home</div>
-                </div>
-              </li>
-            </ul>
+            <Menu :options="mainMenu.number1" />
           </li>
           <li class="list-el">
-            <ul class="menu">
-              <li @mouseover="showTooltip('Stock')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/stock.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Stock'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Stock</div>
-                </div>
-              </li>
-              <li @mouseover="showTooltip('User')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/user.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'User'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">User</div>
-                </div>
-              </li>
-              <li @mouseover="showTooltip('Dollar')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/dollar.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Dollar'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Dollar</div>
-                </div>
-              </li>
-            </ul>
+            <Menu :options="mainMenu.number2" />
           </li>
           <li class="list-el">
-            <ul>
-              <li @mouseover="showTooltip('Eye')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/eye.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Eye'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Eye</div>
-                </div>
-              </li>
-              <li @mouseover="showTooltip('Call')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/call.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Call'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Call</div>
-                </div>
-              </li>
-              <li @mouseover="showTooltip('Phone')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/phone.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Phone'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Phone</div>
-                </div>
-              </li>
-            </ul>
+            <Menu :options="mainMenu.number3" />
           </li>
           <li class="list-el">
-            <ul>
-              <li
-                @mouseover="showTooltip('Questions')"
-                @mouseleave="hideTooltip"
-              >
-                <img
-                  src="../assets/images/mobile_images/burger-list/questions.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Questions'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Questions</div>
-                </div>
-              </li>
-              <li @mouseover="showTooltip('Cloud')" @mouseleave="hideTooltip">
-                <img
-                  src="../assets/images/mobile_images/burger-list/cloud.png"
-                  alt=""
-                />
-                <div v-if="currentTooltip === 'Cloud'" class="tooltip">
-                  <div class="tooltip-arrow"></div>
-                  <div class="tooltip-text">Cloud</div>
-                </div>
-              </li>
-            </ul>
+            <Menu :options="mainMenu.number4" />
           </li>
         </ul>
       </nav>
@@ -213,6 +189,7 @@ body {
   padding: 0;
 
   .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 12px 16px;
@@ -240,71 +217,18 @@ body {
         box-shadow: 0px 0px 6px 0px #ffffff26;
       }
     }
-
+    .burger__menu {
+      z-index: 2;
+      position: absolute;
+      top: calc(100% + 20px);
+    }
     .burger__list {
       z-index: 2;
-      max-width: 30px;
       background-color: transparent;
-      position: absolute;
-      top: 110%;
-      left: 12px;
-      right: 0;
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        li {
-          cursor: pointer;
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 35px;
-          height: 35px;
-          border-radius: 5px;
-          background-color: #432488;
-          transition: 0.5s ease;
-          &:hover {
-            background-color: #d536ff;
-          }
-          &:hover .tooltip {
-            opacity: 1;
-          }
-
-          .tooltip {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            left: 150%;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-          }
-
-          .tooltip-text {
-            background-color: #d9d9d9;
-            padding: 5px 10px;
-            white-space: nowrap;
-            color: #6d1373;
-          }
-
-          .tooltip-arrow {
-            width: 0;
-            height: auto;
-            border-style: solid;
-            border-width: 17px 23px 17px 0;
-            border-color: transparent #d9d9d9 transparent transparent;
-          }
-        }
-      }
     }
     .logo-group {
       display: flex;
@@ -339,16 +263,6 @@ body {
         gap: 8px;
         .burger__icon {
           width: 40px;
-        }
-      }
-      .burger__list {
-        top: 110%;
-        left: 30px;
-        ul {
-          li {
-            width: 40px;
-            height: 40px;
-          }
         }
       }
       .logo-group {
@@ -386,17 +300,9 @@ body {
         display: none;
       }
       .burger__menu {
+        position: absolute;
+        top: calc(100% + 27px);
         order: 3;
-        .burger__list {
-          top: 130%;
-          left: 26px;
-          .menu {
-            li {
-              width: 45px;
-              height: 45px;
-            }
-          }
-        }
       }
       .logo-group {
         order: 1;
